@@ -1,5 +1,6 @@
 package br.com.zup;
 
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +21,18 @@ public class ServiceVenda {
 
     }
     return vendasCadastradas;
+  }
+
+  public static List<Venda> pesquisarVendasPorCpf(String cpf) {
+    List<Venda> comprasPorCpf = new ArrayList<>();
+    for (Venda vendasReferencias : listaDeVendas) {
+      if (vendasReferencias.getCliente().getCpf().equals(cpf)) {
+        comprasPorCpf.add(vendasReferencias);
+      }
+    }
+
+
+
   }
 }
 

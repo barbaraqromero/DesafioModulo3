@@ -25,7 +25,7 @@ public class ServiceCliente {
 
   public static void validarEmailCliente(String email) throws Exception {
     if (!email.contains("@")) {
-      throw new Exception("E-mail inválido!");
+      throw new Exception("E-mail inválido! Necessita de um @.");
 
     }
   }
@@ -42,7 +42,7 @@ public class ServiceCliente {
   public static void verificarCpfCliente(String cpf) throws Exception {
     for (Cliente clienteReferencia : listaDeClientes) {
       if (clienteReferencia.getCpf().equals(cpf)) {
-        throw new Exception("CPF já cadastrado!");
+        throw new Exception("CPF já cadastrado no sistema!");
       }
     }
   }

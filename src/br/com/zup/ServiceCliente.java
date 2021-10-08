@@ -11,4 +11,12 @@ public class ServiceCliente {
     listaDeClientes.add(cliente);
     return cliente;
   }
+
+  public static List<Cliente> exibirClientes(){
+    List<Cliente> clientesCadastrados = new ArrayList<>();
+    for(Cliente clienteReferencia : listaDeClientes){
+      clientesCadastrados.add(clienteReferencia);
+    }
+    return clientesCadastrados;
+  }
 }

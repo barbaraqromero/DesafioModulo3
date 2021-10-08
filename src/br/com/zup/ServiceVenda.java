@@ -1,7 +1,6 @@
 package br.com.zup;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class ServiceVenda {
@@ -11,6 +10,16 @@ public class ServiceVenda {
     Venda venda = new Venda(cliente, vendedorResponsavel, valor, dataDeRegistro);
     listaDeVendas.add(venda);
     return venda;
+  }
+
+  public static List<Venda> exibirVendas() {
+    List<Venda> vendasCadastradas = new ArrayList<>();
+    for (Venda vendaReferencia : listaDeVendas) {
+      vendasCadastradas.add(vendaReferencia);
+
+
+    }
+    return vendasCadastradas;
   }
 }
 

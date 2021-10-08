@@ -12,7 +12,7 @@ public class ServiceVenda {
   //Criando método para cadastrar venda
   public static Venda cadastrarVenda(String email, String cpf, double valor, String dataDeRegistro) throws Exception{
     Cliente cliente = ServiceCliente.pesquisarClientePorCpf(cpf);
-    ServiceCliente.validarEmailCliente(email);
+    //ServiceCliente.validarEmailCliente(email);
     Vendedor vendedor = ServiceVendedor.pesquisarVendedorPorEmail(email);
     Venda venda = new Venda(cliente, vendedor, valor, dataDeRegistro);
     listaDeVendas.add(venda);
@@ -34,10 +34,11 @@ public class ServiceVenda {
   //Criando método para pesquisar compras pelo cpf do cliente
   public static List<Venda> pesquisarComprasPorCpf(String cpf) throws Exception {
     List<Venda> comprasPorCpf = new ArrayList<>();
-    ServiceCliente.verificarCpfCliente(cpf);
+    //ServiceCliente.verificarCpfCliente(cpf);
     for (Venda comprasReferencias : listaDeVendas) {
       if (comprasReferencias.getCliente().getCpf().equals(cpf)) {
         comprasPorCpf.add(comprasReferencias);
+        System.out.println(comprasReferencias);
       }
     }
     return comprasPorCpf;

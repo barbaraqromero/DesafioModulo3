@@ -21,6 +21,8 @@ public class Sistema {
     System.out.println("5 - Consultar lista de clientes");
     System.out.println("6 - Consultar lista de vendas");
     System.out.println("7 - Pesquisar compras por CPF do cliente");
+    System.out.println("8 - Pesquisar vendas pelo e-mail do vendedor");
+    System.out.println("9 - Sair do programa");
   }
 
   public static Vendedor cadastrarVendedor() throws Exception {
@@ -43,24 +45,58 @@ public class Sistema {
 
   public static Venda cadastrarVenda() throws Exception {
     String cpfDoCliente = capturarDados("Digite o CPF do cliente: ").nextLine();
-    String emailDovendedor = capturarDados("Digite o e-mail do vendedor: ").nextLine();
+    String emailDoVendedor = capturarDados("Digite o e-mail do vendedor: ").nextLine();
     double valor = capturarDados("Digite o valor da venda (em R$): ").nextDouble();
     String data = capturarDados("Digite a data: ").nextLine();
 
-    return ServiceVenda.cadastrarVenda(cpfDoCliente, emailDovendedor, valor,data);
+    return ServiceVenda.cadastrarVenda(cpfDoCliente, emailDoVendedor, valor, data);
 
   }
 
-  public static List <Venda> pesquisarComprasporCpf () throws Exception{
+  /*public static List<Venda> pesquisarComprasporCpf() throws Exception {
     String cpf = capturarDados("Digite o CPF que deseja consultar: ").nextLine();
     List<Venda> comprasPorCpf = ServiceVenda.pesquisarComprasPorCpf(cpf);
     return comprasPorCpf;
-  }
+  }*/
 
-  public static List<Venda> pesquisarVendasPorEmail () throws Exception{
+  /*public static List<Venda> pesquisarVendasPorEmail() throws Exception {
     String email = capturarDados("Digite o e-mail que deseja consultar: ").nextLine();
     List<Venda> vendasPorEmail = ServiceVenda.pesquisarVendasPorEmail(email);
     return vendasPorEmail;
+  }*/
+
+  public static boolean executar() throws Exception {
+    boolean menu = true;
+
+    while (menu) {
+      exibirMenu();
+      int opcaoDesejada = capturarDados("Digite a opção desejada: ").nextInt();
+
+      if (opcaoDesejada == 1) {
+        cadastrarVendedor();
+      } else if (opcaoDesejada == 2) {
+        cadastrarCliente();
+      } else if (opcaoDesejada == 3) {
+        cadastrarVenda();
+      } else if (opcaoDesejada == 4) {
+        ServiceVendedor.exibirVendedor();
+      } else if (opcaoDesejada == 5) {
+        ServiceCliente.exibirClientes();
+      } else if (opcaoDesejada == 6) {
+        ServiceVenda.exibirVendas();
+      } else if (opcaoDesejada == 7) {
+        //pesquisarComprasporCpf();
+      } else if (opcaoDesejada == 8) {
+        //pesquisarVendasPorEmail();
+      } else if (opcaoDesejada == 9) {
+        menu = false;
+      } else {
+        System.out.println("Opção inválida!");
+      }
+
+    }
+    return menu;
+
   }
 
 

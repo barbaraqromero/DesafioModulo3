@@ -4,6 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         try {
+            Sistema.exibirMenu();
 
             Cliente cliente1 = new Cliente("Barbara", "bqromero@gmail.com", "36871421831", "Mastercard");
             Cliente cliente2 = new Cliente("Maicon", "maicon@maicon", "35987451233", "Visa");

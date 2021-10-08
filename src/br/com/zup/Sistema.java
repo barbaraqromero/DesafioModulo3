@@ -9,7 +9,14 @@ public class Sistema {
     return new Scanner(System.in);
   }
 
-  private static void ecib
+  public static void exibirMenu(){
+    System.out.println("\n----- VENDAS CORP ----");
+    System.out.println("Bem vindes ao nosso sistema!");
+    System.out.println("\n\t\tM E N U ");
+    System.out.println("1 - Cadastrar vendedor");
+    System.out.println("2 - Cadastrar cliente");
+    System.out.println("3 - Cadastrar venda");
+  }
 
 
 

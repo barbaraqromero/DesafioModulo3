@@ -21,5 +21,13 @@ public class ServiceVendedor {
     return vendedoresCadastrados;
 
   }
+
+  public static void validarEmailVendedor(String email) throws Exception {
+    if (!email.contains("@")) {
+      throw new Exception("E-mail inválido!");
+
+    }
+
+  }
 }
 

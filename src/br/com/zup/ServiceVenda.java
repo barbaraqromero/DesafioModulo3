@@ -10,8 +10,11 @@ public class ServiceVenda {
   private static List<Venda> listaDeVendas = new ArrayList<>();
 
   //Criando método para cadastrar venda
-  public static Venda cadastrarVenda(Cliente cliente, Vendedor vendedorResponsavel, double valor, String dataDeRegistro) {
-    Venda venda = new Venda(cliente, vendedorResponsavel, valor, dataDeRegistro);
+  public static Venda cadastrarVenda(String email, String cpf, double valor, String dataDeRegistro) throws Exception{
+    Cliente cliente = ServiceCliente.pesquisarClientePorCpf(cpf);
+    ServiceCliente.validarEmailCliente(email);
+    Vendedor vendedor = ServiceVendedor.
+    Venda venda = new Venda(valor, dataDeRegistro, cliente, vende);
     listaDeVendas.add(venda);
     return venda;
   }

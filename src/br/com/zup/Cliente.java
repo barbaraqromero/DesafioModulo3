@@ -20,7 +20,7 @@ public class Cliente extends Pessoa{
   public String toString() {
     StringBuilder mostrarDados = new StringBuilder();
     mostrarDados.append(super.toString());
-    mostrarDados.append("Cartão: " + cartao);
+    mostrarDados.append("\nCartão: " + cartao);
 
     return mostrarDados.toString();
   }

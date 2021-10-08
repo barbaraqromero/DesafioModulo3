@@ -6,9 +6,9 @@ public class Venda {
   private Cliente cliente;
   private Vendedor vendedorResponsável;
   private double valor;
-  private Date dataDeRegistro;
+  private String dataDeRegistro;
 
-  public Venda(Cliente cliente, Vendedor vendedorResponsável, double valor, Date dataDeRegistro) {
+  public Venda(Cliente cliente, Vendedor vendedorResponsável, double valor, String dataDeRegistro) {
     this.cliente = cliente;
     this.vendedorResponsável = vendedorResponsável;
     this.valor = valor;
@@ -39,21 +39,21 @@ public class Venda {
     this.valor = valor;
   }
 
-  public Date getDataDeRegistro() {
+  public String getDataDeRegistro() {
     return dataDeRegistro;
   }
 
-  public void setDataDeRegistro(Date dataDeRegistro) {
+  public void setDataDeRegistro(String dataDeRegistro) {
     this.dataDeRegistro = dataDeRegistro;
   }
 
   @Override
   public String toString() {
     StringBuilder mostrarDados = new StringBuilder();
-    mostrarDados.append("Cliente: " + cliente);
-    mostrarDados.append("Vendedor responsável: " + vendedorResponsável);
-    mostrarDados.append("Valor da venda: " + valor);
-    mostrarDados.append("Data de registro: " + dataDeRegistro);
+    mostrarDados.append("\nCliente: " + cliente);
+    mostrarDados.append("\nVendedor responsável: " + vendedorResponsável);
+    mostrarDados.append("\nValor da venda: " + valor);
+    mostrarDados.append("\nData de registro: " + dataDeRegistro);
 
     return mostrarDados.toString();
   }

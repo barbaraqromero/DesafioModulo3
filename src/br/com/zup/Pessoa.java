@@ -38,9 +38,9 @@ public abstract class Pessoa {
   @Override
   public String toString() {
     StringBuilder mostrarDados = new StringBuilder();
-    mostrarDados.append("Nome: " + nome);
-    mostrarDados.append("Email: " + email);
-    mostrarDados.append("CPF: " + cpf);
+    mostrarDados.append("\nNome: " + nome);
+    mostrarDados.append("\nEmail: " + email);
+    mostrarDados.append("\nCPF: " + cpf);
 
     return mostrarDados.toString();
   }

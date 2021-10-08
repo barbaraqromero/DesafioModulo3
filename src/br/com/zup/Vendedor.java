@@ -22,7 +22,7 @@ public class Vendedor extends Pessoa {
   public String toString() {
     StringBuilder mostrarDados = new StringBuilder();
     mostrarDados.append(super.toString());
-    mostrarDados.append("CTPS: " + ctps);
+    mostrarDados.append("\nCTPS: " + ctps);
 
     return mostrarDados.toString();
   }

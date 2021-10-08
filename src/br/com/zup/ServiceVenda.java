@@ -1,6 +1,5 @@
 package br.com.zup;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,12 +9,12 @@ public class ServiceVenda {
   private static List<Venda> listaDeVendas = new ArrayList<>();
 
   //Criando método para cadastrar venda
-  public static Venda cadastrarVenda(String email, String cpf, double valor, String dataDeRegistro) throws Exception{
-    Cliente cliente = ServiceCliente.pesquisarClientePorCpf(cpf);
-    //ServiceCliente.validarEmailCliente(email);
-    Vendedor vendedor = ServiceVendedor.pesquisarVendedorPorEmail(email);
+  public static Venda cadastrarVenda(String emailCliente, String emailVendedor, double valor, String dataDeRegistro) throws Exception{
+    Cliente cliente = ServiceCliente.pesquisarClientePorEmail(emailCliente);
+    Vendedor vendedor = ServiceVendedor.pesquisarVendedorPorEmail(emailVendedor);
     Venda venda = new Venda(cliente, vendedor, valor, dataDeRegistro);
     listaDeVendas.add(venda);
+
     return venda;
   }
 
@@ -47,7 +46,6 @@ public class ServiceVenda {
   //Criando método para pesquisar vendas pelo email do vendedor
   public static List<Venda> pesquisarVendasPorEmail (String email) throws Exception{
     List<Venda> vendasPorEmail = new ArrayList<>();
-    ServiceVendedor.verificarEmailVendedor(email);
     for (Venda vendasReferencia : listaDeVendas){
       if (vendasReferencia.getVendedorResponsável().getEmail().equals(email)){
         vendasPorEmail.add(vendasReferencia);

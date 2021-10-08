@@ -44,26 +44,26 @@ public class Sistema {
   }
 
   public static Venda cadastrarVenda() throws Exception {
-    String cpfDoCliente = capturarDados("Digite o CPF do cliente: ").nextLine();
+    String emailDoCliente = capturarDados("Digite o e-mail do cliente: ").nextLine();
     String emailDoVendedor = capturarDados("Digite o e-mail do vendedor: ").nextLine();
     double valor = capturarDados("Digite o valor da venda (em R$): ").nextDouble();
     String data = capturarDados("Digite a data: ").nextLine();
 
-    return ServiceVenda.cadastrarVenda(cpfDoCliente, emailDoVendedor, valor, data);
+    return ServiceVenda.cadastrarVenda(emailDoCliente, emailDoVendedor, valor, data);
 
   }
 
-  /*public static List<Venda> pesquisarComprasporCpf() throws Exception {
+  public static List<Venda> pesquisarComprasporCpf() throws Exception {
     String cpf = capturarDados("Digite o CPF que deseja consultar: ").nextLine();
     List<Venda> comprasPorCpf = ServiceVenda.pesquisarComprasPorCpf(cpf);
     return comprasPorCpf;
-  }*/
+  }
 
-  /*public static List<Venda> pesquisarVendasPorEmail() throws Exception {
+  public static List<Venda> pesquisarVendasPorEmail() throws Exception {
     String email = capturarDados("Digite o e-mail que deseja consultar: ").nextLine();
     List<Venda> vendasPorEmail = ServiceVenda.pesquisarVendasPorEmail(email);
     return vendasPorEmail;
-  }*/
+  }
 
   public static boolean executar() throws Exception {
     boolean menu = true;
@@ -85,9 +85,9 @@ public class Sistema {
       } else if (opcaoDesejada == 6) {
         ServiceVenda.exibirVendas();
       } else if (opcaoDesejada == 7) {
-        //pesquisarComprasporCpf();
+        pesquisarComprasporCpf();
       } else if (opcaoDesejada == 8) {
-        //pesquisarVendasPorEmail();
+        pesquisarVendasPorEmail();
       } else if (opcaoDesejada == 9) {
         menu = false;
       } else {

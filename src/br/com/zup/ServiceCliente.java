@@ -55,9 +55,9 @@ public class ServiceCliente {
     }
   }
 
-  public static Cliente pesquisarClientePorCpf (String cpf) throws Exception{
+  public static Cliente pesquisarClientePorEmail(String email) throws Exception{
     for (Cliente clienteReferencia : listaDeClientes){
-      if (clienteReferencia.getCpf().equals(cpf)){
+      if (clienteReferencia.getEmail().equalsIgnoreCase(email)){
         return clienteReferencia;
       }
     }

@@ -57,5 +57,11 @@ public class Sistema {
     return comprasPorCpf;
   }
 
+  public static List<Venda> pesquisarVendasPorEmail () throws Exception{
+    String email = capturarDados("Digite o e-mail que deseja consultar: ").nextLine();
+    List<Venda> vendasPorEmail = ServiceVenda.pesquisarVendasPorEmail(email);
+    return vendasPorEmail;
+  }
+
 
 }

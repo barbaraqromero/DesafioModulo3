@@ -9,10 +9,10 @@ public class Main {
             Cliente cliente2 = new Cliente("Maicon", "maicon@maicon", "35987451233", "Visa");
             Vendedor vendedor1 = new Vendedor("Antonio", "antonio@antonio", "32569878421", "555");
 
-            ServiceCliente.cadastrarCliente("Ana", "anaana", "23698754622", "Visa");
+            ServiceCliente.cadastrarCliente("Ana", "ana@ana", "23698754622", "Visa");
             //ServiceCliente.validarEmailCliente("anna");
-            ServiceVendedor.cadastrarVendedor("José", "josejose", "2365542132", "632");
-            ServiceVendedor.validarEmailVendedor("josee");
+            ServiceVendedor.cadastrarVendedor("José", "jose@jose", "2365542132", "632");
+            ServiceVendedor.validarEmailVendedor("jose@jose");
             System.out.println(ServiceCliente.exibirClientes());
             System.out.println(ServiceVendedor.exibirVendedor());
 

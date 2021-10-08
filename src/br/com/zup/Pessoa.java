@@ -1,16 +1,20 @@
 package br.com.zup;
 
 public abstract class Pessoa {
+
+  //Criando atributos
   private String nome;
   private String email;
   private String cpf;
 
+  //Criando método construtor
   public Pessoa(String nome, String email, String cpf) {
     this.nome = nome;
     this.email = email;
     this.cpf = cpf;
   }
 
+  //Criando getters e setters
   public String getNome() {
     return nome;
   }
@@ -35,6 +39,7 @@ public abstract class Pessoa {
     this.cpf = cpf;
   }
 
+  //Criando toString
   @Override
   public String toString() {
     StringBuilder mostrarDados = new StringBuilder();

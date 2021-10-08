@@ -1,13 +1,14 @@
 package br.com.zup;
 
-import java.util.Date;
-
 public class Venda {
+
+  //Criando atributos
   private Cliente cliente;
   private Vendedor vendedorResponsável;
   private double valor;
   private String dataDeRegistro;
 
+  //Criando método construtor
   public Venda(Cliente cliente, Vendedor vendedorResponsável, double valor, String dataDeRegistro) {
     this.cliente = cliente;
     this.vendedorResponsável = vendedorResponsável;
@@ -15,6 +16,7 @@ public class Venda {
     this.dataDeRegistro = dataDeRegistro;
   }
 
+  //Criando getters e setters
   public Cliente getCliente() {
     return cliente;
   }
@@ -47,6 +49,7 @@ public class Venda {
     this.dataDeRegistro = dataDeRegistro;
   }
 
+  //Criando toString
   @Override
   public String toString() {
     StringBuilder mostrarDados = new StringBuilder();

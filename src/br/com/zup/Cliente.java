@@ -1,13 +1,17 @@
 package br.com.zup;
 
 public class Cliente extends Pessoa{
+
+  //Criando atributos
   private String cartao;
 
+  //Criando método construtor
   public Cliente(String nome, String email, String cpf, String cartao) {
     super(nome, email, cpf);
     this.cartao = cartao;
   }
 
+  //Criando getters e setters
   public String getCartao() {
     return cartao;
   }
@@ -16,6 +20,7 @@ public class Cliente extends Pessoa{
     this.cartao = cartao;
   }
 
+  //Criando toString
   @Override
   public String toString() {
     StringBuilder mostrarDados = new StringBuilder();

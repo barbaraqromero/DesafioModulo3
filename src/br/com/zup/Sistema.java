@@ -37,12 +37,12 @@ public class Sistema {
   }
 
   public static Venda cadastrarVenda() throws Exception {
-    String nome = capturarDados("Digite o nome do cliente: ").nextLine();
-    String vendedor = capturarDados("Digite o nome do vendedor: ").nextLine();
-    String valor = capturarDados("Digite o valor da venda (em R$): ").nextLine();
+    String cpfDoCliente = capturarDados("Digite o CPF do cliente: ").nextLine();
+    String emailDovendedor = capturarDados("Digite o e-mail do vendedor: ").nextLine();
+    double valor = capturarDados("Digite o valor da venda (em R$): ").nextDouble();
     String data = capturarDados("Digite a data: ").nextLine();
 
-    return ServiceVenda.cadastrarVenda(nome, vendedor, valor,data);
+    return ServiceVenda.cadastrarVenda(cpfDoCliente, emailDovendedor, valor,data);
 
   }
 

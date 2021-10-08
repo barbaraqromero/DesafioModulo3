@@ -13,8 +13,8 @@ public class ServiceVenda {
   public static Venda cadastrarVenda(String email, String cpf, double valor, String dataDeRegistro) throws Exception{
     Cliente cliente = ServiceCliente.pesquisarClientePorCpf(cpf);
     ServiceCliente.validarEmailCliente(email);
-    Vendedor vendedor = ServiceVendedor.
-    Venda venda = new Venda(valor, dataDeRegistro, cliente, vende);
+    Vendedor vendedor = ServiceVendedor.pesquisarVendedorPorEmail(email);
+    Venda venda = new Venda(cliente, vendedor, valor, dataDeRegistro);
     listaDeVendas.add(venda);
     return venda;
   }

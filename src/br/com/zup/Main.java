@@ -10,6 +10,7 @@ public class Main {
         ServiceCliente.cadastrarCliente("Ana", "ana@ana", "23698754622", "Visa");
         ServiceVendedor.cadastrarVendedor("José", "jose@jose", "2365542132", "632");
         System.out.println(ServiceCliente.exibirClientes());
+        System.out.println(ServiceVendedor.exibirVendedor());
 
 
         //ServiceVenda.cadastrarVenda(cliente1, vendedor1, 500, "08/10/2021");

@@ -23,6 +23,7 @@ public class ServiceCliente {
     List<Cliente> clientesCadastrados = new ArrayList<>();
     for (Cliente clienteReferencia : listaDeClientes) {
       clientesCadastrados.add(clienteReferencia);
+      System.out.println(clienteReferencia);
     }
     return clientesCadastrados;
   }

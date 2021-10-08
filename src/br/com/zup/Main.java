@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            Sistema.cadastrarCliente();
+            Sistema.exibirMenu();
 
 
         } catch (Exception erro) {

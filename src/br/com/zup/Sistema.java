@@ -1,5 +1,6 @@
 package br.com.zup;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Sistema {
@@ -13,9 +14,13 @@ public class Sistema {
     System.out.println("\n----- VENDAS CORP ----");
     System.out.println("Bem vindes ao nosso sistema!");
     System.out.println("\n\t\tM E N U ");
-    System.out.println("1 - Cadastrar vendedor");
+    System.out.println("\n1 - Cadastrar vendedor");
     System.out.println("2 - Cadastrar cliente");
     System.out.println("3 - Cadastrar venda");
+    System.out.println("4 - Consultar lista de vendedores");
+    System.out.println("5 - Consultar lista de clientes");
+    System.out.println("6 - Consultar lista de vendas");
+    System.out.println("7 - Pesquisar compras por CPF do cliente");
   }
 
   public static Vendedor cadastrarVendedor() throws Exception {
@@ -44,6 +49,12 @@ public class Sistema {
 
     return ServiceVenda.cadastrarVenda(cpfDoCliente, emailDovendedor, valor,data);
 
+  }
+
+  public static List <Venda> pesquisarComprasporCpf () throws Exception{
+    String cpf = capturarDados("Digite o CPF que deseja consultar: ").nextLine();
+    List<Venda> comprasPorCpf = ServiceVenda.pesquisarComprasPorCpf(cpf);
+    return comprasPorCpf;
   }
 
 

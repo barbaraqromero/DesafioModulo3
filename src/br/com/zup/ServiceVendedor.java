@@ -24,6 +24,7 @@ public class ServiceVendedor {
     List<Vendedor> vendedoresCadastrados = new ArrayList<>();
     for (Vendedor vendedorReferencia : listaDeVendedores) {
       vendedoresCadastrados.add(vendedorReferencia);
+      System.out.println(vendedorReferencia);
     }
     return vendedoresCadastrados;
 

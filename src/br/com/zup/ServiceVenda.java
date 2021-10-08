@@ -24,6 +24,7 @@ public class ServiceVenda {
     List<Venda> vendasCadastradas = new ArrayList<>();
     for (Venda vendaReferencia : listaDeVendas) {
       vendasCadastradas.add(vendaReferencia);
+      System.out.println(vendaReferencia);
 
 
     }

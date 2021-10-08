@@ -54,4 +54,13 @@ public class ServiceCliente {
     }
   }
 
+  public static Cliente pesquisarClientePorCpf (String cpf) throws Exception{
+    for (Cliente clienteReferencia : listaDeClientes){
+      if (clienteReferencia.getCpf().equals(cpf)){
+        return clienteReferencia;
+      }
+    }
+    throw new Exception("CPF não encontrado!");
+  }
+
 }

@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class Sistema {
 
-  private static Scanner capturarDados (String mensagem){
+  private static Scanner capturarDados(String mensagem) {
     System.out.println(mensagem);
     return new Scanner(System.in);
   }
 
-  public static void exibirMenu(){
+  public static void exibirMenu() {
     System.out.println("\n----- VENDAS CORP ----");
     System.out.println("Bem vindes ao nosso sistema!");
     System.out.println("\n\t\tM E N U ");
@@ -18,7 +18,7 @@ public class Sistema {
     System.out.println("3 - Cadastrar venda");
   }
 
-  public static Vendedor cadastrarVendedor() throws Exception{
+  public static Vendedor cadastrarVendedor() throws Exception {
     String nome = capturarDados("Digite o nome do vendedor: ").nextLine();
     String email = capturarDados("Digite o email do vendedor: ").nextLine();
     String cpf = capturarDados("Digite o cpf do vendedor: ").nextLine();
@@ -27,7 +27,7 @@ public class Sistema {
     return ServiceVendedor.cadastrarVendedor(nome, email, cpf, ctps);
   }
 
-  public static Cliente cadastrarCliente() throws Exception{
+  public static Cliente cadastrarCliente() throws Exception {
     String nome = capturarDados("Digite o nome do cliente: ").nextLine();
     String email = capturarDados("Digite o email do cliente: ").nextLine();
     String cpf = capturarDados("Digite o CPF do cliente: ").nextLine();
@@ -36,6 +36,15 @@ public class Sistema {
     return ServiceCliente.cadastrarCliente(nome, email, cpf, cartao);
   }
 
+  public static Venda cadastrarVenda() throws Exception {
+    String nome = capturarDados("Digite o nome do cliente: ").nextLine();
+    String vendedor = capturarDados("Digite o nome do vendedor: ").nextLine();
+    String valor = capturarDados("Digite o valor da venda (em R$): ").nextLine();
+    String data = capturarDados("Digite a data: ").nextLine();
+
+    return ServiceVenda.cadastrarVenda(nome, vendedor, valor,data);
+
+  }
 
 
 }

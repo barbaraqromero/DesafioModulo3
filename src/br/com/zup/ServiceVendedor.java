@@ -32,7 +32,7 @@ public class ServiceVendedor {
   //Criando método para validar o email do vendedor
   public static void validarEmailVendedor(String email) throws Exception {
     if (!email.contains("@")) {
-      throw new Exception("E-mail inválido!");
+      throw new Exception("E-mail inválido! Necessita de um @.");
 
     }
 

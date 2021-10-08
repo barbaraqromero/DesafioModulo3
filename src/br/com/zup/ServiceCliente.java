@@ -39,9 +39,9 @@ public class ServiceCliente {
 
   }
 
-  public static void verificarCpfCliente(String cpf) throws Exception{
-    for (Cliente clienteReferencia : listaDeClientes){
-      if (clienteReferencia.getCpf().equals(cpf)){
+  public static void verificarCpfCliente(String cpf) throws Exception {
+    for (Cliente clienteReferencia : listaDeClientes) {
+      if (clienteReferencia.getCpf().equals(cpf)) {
         throw new Exception("CPF já cadastrado!");
       }
     }

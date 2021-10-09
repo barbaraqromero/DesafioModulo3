@@ -3,7 +3,9 @@ package br.com.zup;
 public class Main {
 
   public static void main(String[] args) {
+    boolean continuar = true;
 
+    while (continuar) {
       try {
         Sistema.executar();
 
@@ -11,7 +13,11 @@ public class Main {
       } catch (Exception erro) {
         System.out.println(erro.getMessage());
       }
+
     }
 
+
   }
+
+}
 

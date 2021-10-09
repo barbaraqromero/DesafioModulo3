@@ -55,9 +55,9 @@ public class ServiceCliente {
     }
   }
 
-  public static Cliente pesquisarClientePorEmail(String email) throws Exception{
-    for (Cliente clienteReferencia : listaDeClientes){
-      if (clienteReferencia.getEmail().equalsIgnoreCase(email)){
+  public static Cliente pesquisarClientePorEmail(String email) throws Exception {
+    for (Cliente clienteReferencia : listaDeClientes) {
+      if (clienteReferencia.getEmail().equalsIgnoreCase(email)) {
         return clienteReferencia;
       }
     }

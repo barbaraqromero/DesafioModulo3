@@ -69,44 +69,37 @@ public class Sistema {
 
   }
 
-  public static void executar() throws Exception {
+  public static boolean executar() throws Exception {
     boolean menu = true;
 
     while (menu) {
       exibirMenu();
-      int opcaoDesejada = capturarDados("Digite a opção desejada: ").nextInt();
+      int opcaoDesejada = capturarDados("\nDigite a opção desejada: ").nextInt();
 
       if (opcaoDesejada == 1) {
         cadastrarVendedor();
-      }
-      else if (opcaoDesejada == 2) {
+      } else if (opcaoDesejada == 2) {
         cadastrarCliente();
-      }
-      else if (opcaoDesejada == 3) {
+      } else if (opcaoDesejada == 3) {
         cadastrarVenda();
-      }
-      else if (opcaoDesejada == 4) {
+      } else if (opcaoDesejada == 4) {
         ServiceVendedor.exibirVendedor();
-      }
-      else if (opcaoDesejada == 5) {
+      } else if (opcaoDesejada == 5) {
         ServiceCliente.exibirClientes();
-      }
-      else if (opcaoDesejada == 6) {
+      } else if (opcaoDesejada == 6) {
         ServiceVenda.exibirVendas();
-      }
-      else if (opcaoDesejada == 7) {
+      } else if (opcaoDesejada == 7) {
         pesquisarComprasporCpf();
-      }
-      else if (opcaoDesejada == 8) {
+      } else if (opcaoDesejada == 8) {
         pesquisarVendasPorEmail();
-      }
-      else if (opcaoDesejada == 9) {
+      } else if (opcaoDesejada == 9) {
         System.out.println("Até logo!");
         menu = false;
       }
 
     }
-
+    return menu;
   }
+
 
 }

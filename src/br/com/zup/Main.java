@@ -7,7 +7,7 @@ public class Main {
 
     while (continuar) {
       try {
-        Sistema.executar();
+        continuar = Sistema.executar();
 
 
       } catch (Exception erro) {

@@ -3,21 +3,21 @@ package br.com.zup;
 public class Cliente extends Pessoa{
 
   //Criando atributos
-  private String cartao;
+  private String telefone;
 
   //Criando método construtor
-  public Cliente(String nome, String email, String cpf, String cartao) {
+  public Cliente(String nome, String email, String cpf, String telefone) {
     super(nome, email, cpf);
-    this.cartao = cartao;
+    this.telefone = telefone;
   }
 
   //Criando getters e setters
   public String getCartao() {
-    return cartao;
+    return telefone;
   }
 
-  public void setCartao(String cartao) {
-    this.cartao = cartao;
+  public void setCartao(String telefone) {
+    this.telefone = telefone;
   }
 
   //Criando toString
@@ -25,7 +25,7 @@ public class Cliente extends Pessoa{
   public String toString() {
     StringBuilder mostrarDados = new StringBuilder();
     mostrarDados.append(super.toString());
-    mostrarDados.append("\nCartão: " + cartao);
+    mostrarDados.append("\nTelefone: " + telefone);
 
     return mostrarDados.toString();
   }

@@ -9,11 +9,11 @@ public class ServiceCliente {
   private static List<Cliente> listaDeClientes = new ArrayList<>();
 
   //Método para cadastrar cliente
-  public static Cliente cadastrarCliente(String nome, String email, String cpf, String cartao) throws Exception {
+  public static Cliente cadastrarCliente(String nome, String email, String cpf, String telefone) throws Exception {
     validarEmailCliente(email);
     verificarEmailCliente(email);
     verificarCpfCliente(cpf);
-    Cliente cliente = new Cliente(nome, email, cpf, cartao);
+    Cliente cliente = new Cliente(nome, email, cpf, telefone);
     listaDeClientes.add(cliente);
     return cliente;
   }

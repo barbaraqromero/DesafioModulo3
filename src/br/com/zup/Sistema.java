@@ -27,8 +27,8 @@ public class Sistema {
 
   public static Vendedor cadastrarVendedor() throws Exception {
     String nome = capturarDados("Digite o nome do vendedor: ").nextLine();
-    String email = capturarDados("Digite o email do vendedor: ").nextLine();
-    String cpf = capturarDados("Digite o cpf do vendedor: ").nextLine();
+    String email = capturarDados("Digite o e-mail do vendedor: ").nextLine();
+    String cpf = capturarDados("Digite o CPF do vendedor: ").nextLine();
     String ctps = capturarDados("Digite a CTPS: ").nextLine();
 
     return ServiceVendedor.cadastrarVendedor(nome, email, cpf, ctps);
@@ -36,11 +36,11 @@ public class Sistema {
 
   public static Cliente cadastrarCliente() throws Exception {
     String nome = capturarDados("Digite o nome do cliente: ").nextLine();
-    String email = capturarDados("Digite o email do cliente: ").nextLine();
+    String email = capturarDados("Digite o e-mail do cliente: ").nextLine();
     String cpf = capturarDados("Digite o CPF do cliente: ").nextLine();
-    String cartao = capturarDados("Digite o cartão: ").nextLine();
+    String telefone = capturarDados("Digite o telefone: ").nextLine();
 
-    return ServiceCliente.cadastrarCliente(nome, email, cpf, cartao);
+    return ServiceCliente.cadastrarCliente(nome, email, cpf, telefone);
   }
 
   public static Venda cadastrarVenda() throws Exception {

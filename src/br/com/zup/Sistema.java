@@ -63,9 +63,10 @@ public class Sistema {
     String email = capturarDados("Digite o e-mail que deseja consultar: ").nextLine();
     List<Venda> vendasPorEmail = ServiceVenda.pesquisarVendasPorEmail(email);
     return vendasPorEmail;
+
   }
 
-  public static boolean executar() throws Exception {
+  public static void executar() throws Exception {
     boolean menu = true;
 
     while (menu) {
@@ -74,30 +75,35 @@ public class Sistema {
 
       if (opcaoDesejada == 1) {
         cadastrarVendedor();
-      } else if (opcaoDesejada == 2) {
+      }
+      else if (opcaoDesejada == 2) {
         cadastrarCliente();
-      } else if (opcaoDesejada == 3) {
+      }
+      else if (opcaoDesejada == 3) {
         cadastrarVenda();
-      } else if (opcaoDesejada == 4) {
+      }
+      else if (opcaoDesejada == 4) {
         ServiceVendedor.exibirVendedor();
-      } else if (opcaoDesejada == 5) {
+      }
+      else if (opcaoDesejada == 5) {
         ServiceCliente.exibirClientes();
-      } else if (opcaoDesejada == 6) {
+      }
+      else if (opcaoDesejada == 6) {
         ServiceVenda.exibirVendas();
-      } else if (opcaoDesejada == 7) {
+      }
+      else if (opcaoDesejada == 7) {
         pesquisarComprasporCpf();
-      } else if (opcaoDesejada == 8) {
+      }
+      else if (opcaoDesejada == 8) {
         pesquisarVendasPorEmail();
-      } else if (opcaoDesejada == 9) {
+      }
+      else if (opcaoDesejada == 9) {
+        System.out.println("Até logo!");
         menu = false;
-      } else {
-        System.out.println("Opção inválida!");
       }
 
     }
-    return menu;
 
   }
-
 
 }

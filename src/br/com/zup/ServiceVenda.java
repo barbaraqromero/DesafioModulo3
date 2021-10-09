@@ -49,6 +49,7 @@ public class ServiceVenda {
     for (Venda vendasReferencia : listaDeVendas){
       if (vendasReferencia.getVendedorResponsável().getEmail().equals(email)){
         vendasPorEmail.add(vendasReferencia);
+        System.out.println(vendasReferencia);
       }
     }
     return vendasPorEmail;

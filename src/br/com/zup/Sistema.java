@@ -48,8 +48,11 @@ public class Sistema {
     String emailDoVendedor = capturarDados("Digite o e-mail do vendedor: ").nextLine();
     double valor = capturarDados("Digite o valor da venda (em R$): ").nextDouble();
     String data = capturarDados("Digite a data: ").nextLine();
+    System.out.println("---- FORMAS DE PAGAMENTO ----");
+    System.out.println(ServiceVenda.exibirFormasDePagamento());
+    String formaDePagamento = capturarDados("Digite a forma de pagamento: ").nextLine();
 
-    return ServiceVenda.cadastrarVenda(emailDoCliente, emailDoVendedor, valor, data);
+    return ServiceVenda.cadastrarVenda(emailDoCliente, emailDoVendedor, valor, data, formaDePagamento);
 
   }
 

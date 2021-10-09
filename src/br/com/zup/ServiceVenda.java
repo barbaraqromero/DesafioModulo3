@@ -9,10 +9,11 @@ public class ServiceVenda {
   private static List<Venda> listaDeVendas = new ArrayList<>();
 
   //Criando método para cadastrar venda
-  public static Venda cadastrarVenda(String emailCliente, String emailVendedor, double valor, String dataDeRegistro) throws Exception{
+  public static Venda cadastrarVenda(String emailCliente, String emailVendedor, double valor, String dataDeRegistro, String formaDePagamento) throws Exception{
     Cliente cliente = ServiceCliente.pesquisarClientePorEmail(emailCliente);
     Vendedor vendedor = ServiceVendedor.pesquisarVendedorPorEmail(emailVendedor);
-    Venda venda = new Venda(cliente, vendedor, valor, dataDeRegistro);
+    FormaDePagamento formaDePagamento1 = validarFormaDePagamento(formaDePagamento);
+    Venda venda = new Venda(cliente, vendedor, valor, dataDeRegistro, formaDePagamento1);
     listaDeVendas.add(venda);
 
     return venda;
@@ -53,6 +54,23 @@ public class ServiceVenda {
       }
     }
     return vendasPorEmail;
+  }
+
+  public static List<FormaDePagamento> exibirFormasDePagamento (){
+    List<FormaDePagamento> formasDePagamento = new ArrayList<>();
+    for (FormaDePagamento pagamentoReferencia : FormaDePagamento.values()){
+      formasDePagamento.add(pagamentoReferencia);
+    }
+    return formasDePagamento;
+  }
+
+  public static FormaDePagamento validarFormaDePagamento (String formaDePagamento) throws Exception{
+    for (FormaDePagamento pagamentoReferencia : FormaDePagamento.values()){
+      if (formaDePagamento.equalsIgnoreCase(String.valueOf(pagamentoReferencia))){
+        return pagamentoReferencia;
+      }
+    }
+    throw new Exception("Forma de pagamento inválida!");
   }
 }
 

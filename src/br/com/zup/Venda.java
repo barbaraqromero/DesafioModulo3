@@ -7,13 +7,15 @@ public class Venda {
   private Vendedor vendedorResponsável;
   private double valor;
   private String dataDeRegistro;
+  private FormaDePagamento formaDePagamento;
 
   //Criando método construtor
-  public Venda(Cliente cliente, Vendedor vendedorResponsável, double valor, String dataDeRegistro) {
+  public Venda(Cliente cliente, Vendedor vendedorResponsável, double valor, String dataDeRegistro, FormaDePagamento formaDePagamento) {
     this.cliente = cliente;
     this.vendedorResponsável = vendedorResponsável;
     this.valor = valor;
     this.dataDeRegistro = dataDeRegistro;
+    this.formaDePagamento = formaDePagamento;
   }
 
   //Criando getters e setters
@@ -49,6 +51,14 @@ public class Venda {
     this.dataDeRegistro = dataDeRegistro;
   }
 
+  public FormaDePagamento getFormaDePagamento() {
+    return formaDePagamento;
+  }
+
+  public void setFormaDePagamento(FormaDePagamento formaDePagamento) {
+    this.formaDePagamento = formaDePagamento;
+  }
+
   //Criando toString
   @Override
   public String toString() {
@@ -57,6 +67,7 @@ public class Venda {
     mostrarDados.append("\nVendedor responsável: " + vendedorResponsável);
     mostrarDados.append("\nValor da venda: " + valor);
     mostrarDados.append("\nData de registro: " + dataDeRegistro);
+    mostrarDados.append("\nForma de pagamento: " + formaDePagamento);
 
     return mostrarDados.toString();
   }

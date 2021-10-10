@@ -55,6 +55,7 @@ public class ServiceCliente {
     }
   }
 
+  //Método para pesquisar um cliente através do seu email
   public static Cliente pesquisarClientePorEmail(String email) throws Exception {
     for (Cliente clienteReferencia : listaDeClientes) {
       if (clienteReferencia.getEmail().equalsIgnoreCase(email)) {

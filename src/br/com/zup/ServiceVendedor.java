@@ -8,7 +8,7 @@ public class ServiceVendedor {
   //Criando lista de vendedores
   private static List<Vendedor> listaDeVendedores = new ArrayList<>();
 
-  //Criando método para cadastrar vendedor
+  //Método para cadastrar vendedor
   public static Vendedor cadastrarVendedor(String nome, String email, String cpf, String ctps) throws Exception {
     validarEmailVendedor(email);
     verificarEmailVendedor(email);
@@ -19,7 +19,7 @@ public class ServiceVendedor {
 
   }
 
-  //Criando método para exibir vendedor
+  //Método para exibir vendedor
   public static List<Vendedor> exibirVendedor() {
     List<Vendedor> vendedoresCadastrados = new ArrayList<>();
     for (Vendedor vendedorReferencia : listaDeVendedores) {
@@ -30,7 +30,7 @@ public class ServiceVendedor {
 
   }
 
-  //Criando método para validar o email do vendedor
+  //Método para validar o email do vendedor
   public static void validarEmailVendedor(String email) throws Exception {
     if (!email.contains("@")) {
       throw new Exception("E-mail inválido! Necessita de um @.");
@@ -39,7 +39,7 @@ public class ServiceVendedor {
 
   }
 
-  //Criando método para verificar email do vendedor
+  //Método para verificar email do vendedor
   public static void verificarEmailVendedor(String email) throws Exception {
     for (Vendedor vendedorReferencia : listaDeVendedores) {
       if (vendedorReferencia.getEmail().equals(email)) {
@@ -48,7 +48,7 @@ public class ServiceVendedor {
     }
   }
 
-  //Criar método para veridicar o cpf do vendedor
+  //Método para verificar o cpf do vendedor
   public static void verificarCpfVendedor(String cpf) throws Exception {
     for (Vendedor vendedorReferencia : listaDeVendedores) {
       if (vendedorReferencia.getCpf().equals(cpf)) {
@@ -57,6 +57,7 @@ public class ServiceVendedor {
     }
   }
 
+  //Método para pesquisar um vendedor através do seu email
   public static Vendedor pesquisarVendedorPorEmail (String email) throws Exception{
     for (Vendedor vendedorReferencia : listaDeVendedores){
       if (vendedorReferencia.getEmail().equals(email)){

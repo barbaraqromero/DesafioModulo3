@@ -1,7 +1,5 @@
 package br.com.zup;
 
-import javax.print.DocFlavor;
-
 public class Vendedor extends Pessoa {
 
   //Criando atributos
@@ -12,7 +10,6 @@ public class Vendedor extends Pessoa {
     super(nome, email, cpf);
     this.ctps = ctps;
   }
-
 
   //Criar getters e setters
   public String getCtps() {

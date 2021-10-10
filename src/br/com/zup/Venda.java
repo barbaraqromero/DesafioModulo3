@@ -1,7 +1,5 @@
 package br.com.zup;
 
-import java.util.Date;
-
 public class Venda {
 
   //Criando atributos

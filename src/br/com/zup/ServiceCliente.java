@@ -62,7 +62,7 @@ public class ServiceCliente {
         return clienteReferencia;
       }
     }
-    throw new Exception("CPF não encontrado!");
+    throw new Exception("E-mail não encontrado!");
   }
 
 }

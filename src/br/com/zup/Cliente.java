@@ -12,11 +12,11 @@ public class Cliente extends Pessoa{
   }
 
   //Criando getters e setters
-  public String getCartao() {
+  public String getTelefone() {
     return telefone;
   }
 
-  public void setCartao(String telefone) {
+  public void setTelefone(String telefone) {
     this.telefone = telefone;
   }
 

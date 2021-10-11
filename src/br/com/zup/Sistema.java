@@ -5,11 +5,13 @@ import java.util.Scanner;
 
 public class Sistema {
 
+  //Método para receber dados do usuário
   private static Scanner capturarDados(String mensagem) {
     System.out.println(mensagem);
     return new Scanner(System.in);
   }
 
+  //Método para exibir menu
   public static void exibirMenu() {
     System.out.println("\n----- VENDAS CORP ----");
     System.out.println("Bem vindes ao nosso sistema!");
@@ -25,6 +27,7 @@ public class Sistema {
     System.out.println("9 - Sair do programa");
   }
 
+  //Método para receber dados do usuário e cadastrar um vendedor
   public static Vendedor cadastrarVendedor() throws Exception {
     String nome = capturarDados("Digite o nome do vendedor: ").nextLine();
     String email = capturarDados("Digite o e-mail do vendedor: ").nextLine();
@@ -34,6 +37,7 @@ public class Sistema {
     return ServiceVendedor.cadastrarVendedor(nome, email, cpf, ctps);
   }
 
+  //Método para receber dados do usuário e cadastrar um cliente
   public static Cliente cadastrarCliente() throws Exception {
     String nome = capturarDados("Digite o nome do cliente: ").nextLine();
     String email = capturarDados("Digite o e-mail do cliente: ").nextLine();
@@ -43,6 +47,7 @@ public class Sistema {
     return ServiceCliente.cadastrarCliente(nome, email, cpf, telefone);
   }
 
+  //Método para receber dados do usuário e cadastrar uma venda
   public static Venda cadastrarVenda() throws Exception {
     String emailDoCliente = capturarDados("Digite o e-mail do cliente: ").nextLine();
     String emailDoVendedor = capturarDados("Digite o e-mail do vendedor: ").nextLine();
@@ -56,12 +61,14 @@ public class Sistema {
 
   }
 
+  //Método para receber dado do usuário para pesquisar compras por CPF
   public static List<Venda> pesquisarComprasporCpf() throws Exception {
     String cpf = capturarDados("Digite o CPF que deseja consultar: ").nextLine();
     List<Venda> comprasPorCpf = ServiceVenda.pesquisarComprasPorCpf(cpf);
     return comprasPorCpf;
   }
 
+  //Método para receber dado do usuário e pesquisar vendas por email
   public static List<Venda> pesquisarVendasPorEmail() throws Exception {
     String email = capturarDados("Digite o e-mail que deseja consultar: ").nextLine();
     List<Venda> vendasPorEmail = ServiceVenda.pesquisarVendasPorEmail(email);
@@ -69,6 +76,7 @@ public class Sistema {
 
   }
 
+  //Método para juntar todos os outros e executar o programa
   public static boolean executar() throws Exception {
     boolean menu = true;
 
